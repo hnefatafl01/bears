@@ -1,0 +1,14 @@
+<div class="container row">
+  <h1 class="text-center">
+    bears works!
+  </h1>
+  <button class="btn btn-default" 
+      [disabled]="!isDisabled"
+      (click)="onClick()">Add Bear</button>
+  <p>{{bearStatus}}</p>
+  <ul class="list-group">
+    <li class="list-group-item">
+       <app-bear></app-bear> 
+    </li>
+  </ul>
+</div>
