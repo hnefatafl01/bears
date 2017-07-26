@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bear.component.css']
 })
 export class BearComponent implements OnInit {
-  name: string;
-  id: number;
+  name = 'chuck';
+  id = 0;
 
   // constructor(name: string, id: number) {
   //   this.name = name;

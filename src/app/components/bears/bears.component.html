@@ -1,14 +1,24 @@
-<div class="container row">
-  <h1 class="text-center">
-    bears works!
-  </h1>
-  <button class="btn btn-default" 
-      [disabled]="!isDisabled"
-      (click)="onClick()">Add Bear</button>
-  <p>{{bearStatus}}</p>
-  <ul class="list-group">
-    <li class="list-group-item">
-       <app-bear></app-bear> 
-    </li>
-  </ul>
+<div class="container col-md-4 col-md-offset-4">
+  <div class="panel panel-defualt row">
+    <div class="panel-header">
+      <h1 class="text-center">Bears Collective</h1>
+    <div>
+    <form class="form-horizontal">
+      <input type="text" class="form-control" [(ngModel)]="bearName" name="bearName"/>
+      <button class="btn btn-default form-control" 
+          [disabled]="bearName === ''"
+          (click)="onClick(); bearName = '';">Add Bear</button>
+    </form>
+    <div class="container row">
+          <div class="container" >
+            <h4 [ngClass]="{ 'text-warning': getInputLength() === true, 'text-success': getInputLength() === false }">{{bearStatus}}</h4>
+          </div>
+          <app-warning></app-warning>
+          <app-success></app-success>
+    </div>
+    
+    <ul class="list-group">
+      <app-bear *ngFor="let bear of bears"></app-bear> 
+    </ul>
+  <div>
 </div>

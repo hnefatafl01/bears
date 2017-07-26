@@ -6,29 +6,41 @@ import { BearComponent } from '../bear/bear.component';
   styleUrls: ['./bears.component.css']
 })
 export class BearsComponent implements OnInit {
-  bears = [];
-  bear: BearComponent;
-  isDisabled = false;
+  bears = [{id: 1, name: 'Booboo'}, {id: 2, name: 'smokey' }];
+  bearId = this.bears.length;
+  isDisabled;
   bearStatus;
+  bearName = '';
+  newBear: BearComponent;
+  topFive;
+  // badInput;
 
   constructor() {
-    setTimeout(() => {
-      this.isDisabled = true;
-    }, 3000);
+    this.topFive = this.bearId < 6 ? 'green' : 'red';
+    console.log(this.topFive);
   }
 
   ngOnInit() {
-    // this.bear = new BearComponent('bobo', 1);
-    // console.log(this.bear);
-    // this.bear.id = 1;
-    // this.bear.name = 'bobo';
   }
 
   onClick() {
-    this.bearStatus = 'Added new bear';
+    this.bearId++;
+    this.newBear = new BearComponent();
+    this.newBear.id = this.bearId;
+    this.newBear.name = this.bearName;
+    this.bears.unshift(this.newBear);
+    console.log(this.bears);
+    this.bearStatus = 'Added new bear ' + this.bearName;
     setTimeout(() => {
       this.bearStatus = '';
-    }, 4000);
+    }, 10000);
   }
 
+  getInputLength() {
+    if (this.bearName.length > 20 || this.bearName.length < 3) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
