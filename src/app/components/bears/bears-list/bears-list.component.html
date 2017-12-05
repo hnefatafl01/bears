@@ -1,0 +1,9 @@
+<button class="btn btn-default" (click)="newBear()">Add Bear</button>
+<app-bear-form [bears]="bears" *ngIf="addBear === true"></app-bear-form>
+<hr>
+<ul class="media-list list-group">
+    <app-bear-item
+      *ngFor="let bear of bears; let i = index;"
+      [bear]="bear">
+    </app-bear-item>
+</ul>

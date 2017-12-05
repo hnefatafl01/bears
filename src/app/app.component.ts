@@ -6,11 +6,4 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'app';
-
-  onClick(saying) {
-    this.title = saying;
-    console.log(this.title);
-  }
-}
+export class AppComponent { }

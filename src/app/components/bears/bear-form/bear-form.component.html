@@ -1,0 +1,32 @@
+<!-- <div class="panel panel-default"> -->
+  <form>
+    <div class="form-group">
+      <label for="bearName">Input new bear name</label>
+      <input
+        class="form-control"
+        type="text"
+        id="bearName"
+        #bearName
+        >
+    </div>
+      <div class="form-group">
+      <label for="bearImgUrl">Add image url</label>
+      <input
+        class="form-control"
+        type="text"
+        id="bearImgUrl"
+        #bearImgUrl
+        >
+    </div>
+    <div class="form-group">
+      <label for="bearLikes">Add what bear likes</label>
+      <input
+        class="form-control"
+        type="text"
+        id="bearLikes"
+        #bearDescription
+        >
+    </div>
+    <button (click)="addBear(bearName, bearImgUrl, bearDescription)" type="button" class="btn btn-success">Add Bear</button>
+  </form>
+<!-- </div> -->
